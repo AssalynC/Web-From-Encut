@@ -1,0 +1,1866 @@
+/* ==========================
+   GOOGLE FONT
+========================== */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+/* ==========================
+   RESET
+========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+    min-height:100vh;
+
+    color:white;
+
+    background:
+    radial-gradient(circle at top,#253056 0%,#111827 45%,#09090f 100%);
+
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+
+    position:relative;
+}
+
+
+/* ==========================
+   STAR BACKGROUND
+========================== */
+
+.stars{
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    left:0;
+    top:0;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+    overflow:hidden;
+
+}
+
+/* Bintang kecil */
+.stars::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+    50px 80px white,
+    100px 300px white,
+    250px 200px white,
+    500px 500px white,
+    700px 100px white,
+    900px 400px white,
+    1100px 150px white,
+    1250px 600px white,
+    1500px 250px white,
+    1700px 500px white,
+    1900px 150px white,
+    2100px 350px white;
+
+    animation:twinkle 3s infinite alternate;
+}
+
+/* Bintang sedang */
+.stars::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:2px;
+    height:2px;
+
+    border-radius:50%;
+
+    background:#FFD6EC;
+
+    box-shadow:
+    120px 500px #FFD6EC,
+    340px 620px #FFD6EC,
+    680px 220px #FFD6EC,
+    870px 700px #FFD6EC,
+    1000px 250px #FFD6EC,
+    1340px 120px #FFD6EC,
+    1600px 430px #FFD6EC,
+    1800px 690px #FFD6EC;
+
+    animation:twinkle 5s infinite alternate;
+}
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.2;
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1.3);
+
+    }
+
+}
+
+/* ===============================
+   TAP BUTTON LOADING
+================================ */
+
+.tap-text{
+
+    margin-top:25px;
+
+    font-family:'Caveat',cursive;
+
+    font-size:32px;
+
+    color:#ffd6ec;
+
+    opacity:0;
+
+    cursor:pointer;
+
+    pointer-events:none;
+
+    animation:
+    tapGlow 1.5s infinite;
+
+    transition:.5s;
+
+}
+
+
+.tap-text.active{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+}
+
+
+
+@keyframes tapGlow{
+
+
+    50%{
+
+        transform:translateY(-8px);
+
+        text-shadow:
+        0 0 20px #ffb6cf;
+
+    }
+
+}
+
+/* ==========================
+   CONTAINER
+========================== */
+
+.container{
+
+    width:100%;
+    max-width:1000px;
+
+    padding:80px 20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+/* ==========================
+   PHOTO GALLERY
+========================== */
+
+.gallery{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:35px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:90px;
+
+}
+
+
+/* ==========================
+   PHOTO STYLE
+========================== */
+
+.gallery img{
+
+    width:220px;
+
+    height:280px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    border:8px solid rgba(255,255,255,.08);
+
+    background:white;
+
+    padding:15px;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.45);
+
+    transition:.45s;
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    animation:photoAppear .8s forwards;
+
+}
+
+/* Delay setiap foto */
+.gallery img:nth-child(1){
+
+    animation-delay:.3s;
+
+}
+
+.gallery img:nth-child(2){
+
+    animation-delay:1.2s;
+
+}
+
+.gallery img:nth-child(3){
+
+    animation-delay:2.1s;
+
+}
+
+
+/* Hover */
+
+.gallery img:hover{
+
+    transform:
+
+    translateY(-10px)
+
+    rotate(-2deg)
+
+    scale(1.05);
+
+    box-shadow:
+    0 20px 60px rgba(255,182,193,.35);
+
+}
+
+
+/* Animasi muncul */
+
+@keyframes photoAppear{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ==========================
+   JUDUL KECIL
+========================== */
+
+.gallery::before{
+
+    content:"Our Memories ✨";
+
+    width:100%;
+
+    text-align:center;
+
+    font-family:'Caveat',cursive;
+
+    font-size:48px;
+
+    color:#ffd6ec;
+
+    margin-bottom:25px;
+
+    text-shadow:
+    0 0 20px rgba(255,182,193,.3);
+
+}
+
+
+/* Glow lembut */
+.gallery img::selection{
+
+    background:#ffc4da;
+
+}
+
+
+/* Sedikit animasi mengambang */
+.gallery img{
+
+    animation-name:photoAppear,floating;
+
+    animation-duration:.8s,4s;
+
+    animation-delay:.5s,3s;
+
+    animation-fill-mode:forwards,forwards;
+
+    animation-iteration-count:1,infinite;
+
+}
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =========================================
+   ENVELOPE
+========================================= */
+
+.envelope{
+
+    width:260px;
+    height:170px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    margin:80px auto;
+
+    transition:.6s;
+
+    animation:envelopeFloat 3s ease-in-out infinite;
+
+}
+
+/* Badan Amplop */
+
+.paper{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+    145deg,
+    #f8d7da,
+    #f4b8c5);
+
+    border-radius:12px;
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.35);
+
+    overflow:hidden;
+
+}
+
+/* Segitiga Tutup */
+
+.lid{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+    145deg,
+    #ffd9e6,
+    #ffb9cf);
+
+    clip-path:polygon(
+    0 0,
+    100% 0,
+    50% 58%);
+
+    transform-origin:top;
+
+    transition:.8s;
+
+    z-index:5;
+
+}
+
+/* Lipatan kiri */
+
+.paper::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:100%;
+
+    background:#f5cad4;
+
+    clip-path:polygon(
+    0 100%,
+    0 0,
+    50% 50%);
+
+}
+
+/* Lipatan kanan */
+
+.paper::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:0;
+    bottom:0;
+
+    width:100%;
+    height:100%;
+
+    background:#efb5c5;
+
+    clip-path:polygon(
+    100% 100%,
+    100% 0,
+    50% 50%);
+
+}
+
+/* Hati */
+
+.heart{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-45%);
+
+    width:58px;
+    height:58px;
+
+    background:#ff4f8f;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    font-size:26px;
+
+    color:white;
+
+    z-index:8;
+
+    box-shadow:
+    0 0 25px rgba(255,80,140,.5);
+
+    transition:.4s;
+
+}
+
+/* Hover */
+
+.envelope:hover .heart{
+
+    transform:
+    translate(-50%,-45%)
+    scale(1.15);
+
+}
+
+/* Efek goyang */
+
+@keyframes envelopeFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   LETTER
+========================================= */
+
+.letter{
+
+    width:90%;
+    max-width:760px;
+
+    min-height:420px;
+
+    margin-top:40px;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.4);
+
+    opacity:0;
+
+    transform:
+    translateY(120px)
+    scale(.9);
+
+    transition:1s;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+/* Surat muncul */
+
+.letter.show{
+
+    opacity:1;
+
+    transform:
+    translateY(0)
+    scale(1);
+
+}
+
+
+/* Judul */
+
+.letter h2{
+
+    text-align:center;
+
+    font-family:'Caveat',cursive;
+
+    font-size:58px;
+
+    color:#ffd8e9;
+
+    margin-bottom:30px;
+
+}
+
+/* Isi surat */
+
+#typing{
+
+    font-size:21px;
+
+    line-height:2;
+
+    color:#fdfdfd;
+
+    white-space:pre-wrap;
+
+    word-break:break-word;
+
+}
+
+/* Cursor */
+
+#typing::after{
+
+    content:"|";
+
+    animation:blink .8s infinite;
+
+    color:#ffb6cf;
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================================
+   OPEN ENVELOPE
+========================================= */
+
+.envelope.open .lid{
+
+    transform:
+    rotateX(180deg);
+
+}
+
+.envelope.open{
+
+    transform:
+    translateY(-20px);
+
+}
+
+
+/* =========================================
+   Glow
+========================================= */
+
+.letter{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.letter::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-150px;
+    left:-150px;
+
+    width:320px;
+    height:320px;
+
+    border-radius:50%;
+
+    background:
+    rgba(255,182,193,.08);
+
+    filter:blur(70px);
+
+}
+
+.letter::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-120px;
+    bottom:-120px;
+
+    width:260px;
+    height:260px;
+
+    border-radius:50%;
+
+    background:
+    rgba(221,160,255,.08);
+
+    filter:blur(70px);
+
+}
+
+
+/* =========================================
+   Scroll Animation
+========================================= */
+
+.letter{
+
+    animation:
+    fadeLetter 1.2s;
+
+}
+
+@keyframes fadeLetter{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(80px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+/* ==========================================
+   FLOATING HEARTS
+========================================== */
+
+.floating-heart{
+
+    position:fixed;
+
+    font-size:20px;
+
+    pointer-events:none;
+
+    animation:heartFly 6s linear forwards;
+
+    z-index:999;
+
+    opacity:.8;
+
+}
+
+@keyframes heartFly{
+
+    0%{
+
+        transform:
+        translateY(0)
+        scale(.6)
+        rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+        translateY(-110vh)
+        translateX(80px)
+        scale(1.5)
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ==========================================
+   SPARKLE
+========================================== */
+
+.sparkle{
+
+    position:fixed;
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+    0 0 12px white;
+
+    animation:sparkle 3s infinite;
+
+}
+
+@keyframes sparkle{
+
+    0%{
+
+        opacity:0;
+
+        transform:scale(.5);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.3);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:scale(.5);
+
+    }
+
+}
+
+
+/* ==========================================
+   SMOOTH FADE
+========================================== */
+
+.fade-in{
+
+    animation:fadeUp 1s ease forwards;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================
+   CUSTOM SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+    linear-gradient(
+    #ffb3d9,
+    #d6bcfa);
+
+    border-radius:30px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:
+    linear-gradient(
+    #ffc4e3,
+    #f0d4ff);
+
+}
+
+
+/* ==========================================
+   TEXT SELECTION
+========================================== */
+
+::selection{
+
+    background:#ffb6cf;
+
+    color:white;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE TABLET
+========================================== */
+
+@media(max-width:900px){
+
+.container{
+
+    padding:60px 20px;
+
+}
+
+.gallery{
+
+    gap:20px;
+
+}
+
+.gallery img{
+
+    width:190px;
+
+    height:240px;
+
+}
+
+.letter{
+
+    width:95%;
+
+    padding:35px;
+
+}
+
+.letter h2{
+
+    font-size:48px;
+
+}
+
+#typing{
+
+    font-size:18px;
+
+}
+
+}
+
+
+/* ==========================================
+   RESPONSIVE MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+.gallery{
+
+    flex-direction:column;
+
+}
+
+.gallery::before{
+
+    font-size:38px;
+
+}
+
+.gallery img{
+
+    width:88%;
+
+    max-width:280px;
+
+    height:auto;
+
+}
+
+.envelope{
+
+    width:210px;
+
+    height:140px;
+
+}
+
+.heart{
+
+    width:48px;
+
+    height:48px;
+
+    font-size:20px;
+
+}
+
+.letter{
+
+    margin-top:20px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+}
+
+.letter h2{
+
+    font-size:40px;
+
+}
+
+#typing{
+
+    font-size:17px;
+
+    line-height:1.9;
+
+}
+
+}
+
+
+/* ==========================================
+   EXTRA SMALL PHONE
+========================================== */
+
+@media(max-width:480px){
+
+.container{
+
+    padding:40px 15px;
+
+}
+
+.gallery::before{
+
+    font-size:32px;
+
+}
+
+.gallery img{
+
+    width:95%;
+
+}
+
+.envelope{
+
+    width:180px;
+
+    height:120px;
+
+}
+
+.heart{
+
+    width:42px;
+
+    height:42px;
+
+    font-size:18px;
+
+}
+
+.letter{
+
+    width:100%;
+
+    padding:20px;
+
+}
+
+.letter h2{
+
+    font-size:34px;
+
+}
+
+#typing{
+
+    font-size:16px;
+
+}
+
+}
+
+
+/* ==========================================
+   TOUCH EFFECT
+========================================== */
+
+.envelope:active{
+
+    transform:scale(.95);
+
+}
+
+.gallery img:active{
+
+    transform:scale(.98);
+
+}
+
+
+/* ==========================================
+   PAGE END SPACING
+========================================== */
+
+body{
+
+    padding-bottom:120px;
+
+}
+
+
+/* ==========================================
+   PREVENT OVERFLOW BUG
+========================================== */
+
+html,
+body{
+
+    width:100%;
+
+    overflow-x:hidden;
+
+}
+
+
+/* ==========================================
+   SMOOTH TRANSITION
+========================================== */
+
+*{
+
+    transition:
+    background .3s,
+    color .3s,
+    transform .3s;
+
+}
+/* ===============================
+   AIRPLANE
+================================ */
+
+
+.plane-container{
+
+    display:none;
+
+    text-align:center;
+
+    margin-top:40px;
+
+    color:#ffd6ec;
+
+    font-family:'Caveat',cursive;
+
+    font-size:28px;
+
+}
+
+
+.plane{
+
+    font-size:60px;
+
+    cursor:pointer;
+
+    animation:planeFloat 2s infinite;
+
+}
+
+
+@keyframes planeFloat{
+
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+}
+
+
+/* Pesawat terbang */
+
+.plane.fly{
+
+
+    animation:flyAway 3s forwards;
+
+
+}
+
+
+@keyframes flyAway{
+
+
+    0%{
+
+        transform:
+        translate(0,0)
+        rotate(0deg);
+
+    }
+
+
+    100%{
+
+        transform:
+        translate(120vw,-80vh)
+        rotate(-20deg);
+
+
+    }
+
+}
+
+
+/* ===============================
+   END PAGE
+================================ */
+
+
+.ending{
+
+
+    display:none;
+
+    text-align:center;
+
+    min-height:300px;
+
+    padding:80px 20px;
+
+}
+
+
+.route{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:35px;
+
+    font-size:30px;
+
+    color:#ffd6ec;
+
+}
+
+
+.flight{
+
+    animation:flySmall 2s infinite;
+
+}
+
+
+@keyframes flySmall{
+
+
+    50%{
+
+        transform:translateX(15px);
+
+    }
+
+}
+
+
+.ending h2{
+
+    margin-top:50px;
+
+    font-family:'Caveat';
+
+    font-size:45px;
+
+}
+
+
+.ending h1{
+
+    font-family:'Caveat';
+
+    font-size:70px;
+
+    color:#ffd6ec;
+
+}
+/* ===============================
+   LOADING SCREEN
+================================ */
+
+
+.loader{
+
+    position:fixed;
+
+    width:100%;
+
+    height:100vh;
+
+    background:
+    radial-gradient(
+    circle at center,
+    #253056,
+    #09090f
+    );
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+    transition:1s;
+
+}
+
+
+.loader.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+
+/* Moon */
+
+.moon{
+
+    font-size:80px;
+
+    animation:
+    moonFloat 2s infinite;
+
+}
+
+
+@keyframes moonFloat{
+
+
+    50%{
+
+        transform:
+        translateY(-15px);
+
+    }
+
+}
+
+
+.loader h2{
+
+
+    margin-top:25px;
+
+    font-family:'Caveat',cursive;
+
+    font-size:40px;
+
+    color:#ffd6ec;
+
+}
+
+
+/* Loading bar */
+
+
+.loading-bar{
+
+    margin-top:30px;
+
+    width:250px;
+
+    height:8px;
+
+    background:
+    rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+
+.loading-progress{
+
+
+    height:100%;
+
+    width:0%;
+
+    background:
+    linear-gradient(
+    90deg,
+    #ffb6cf,
+    #e9d5ff
+    );
+
+
+    animation:
+    loading 3s forwards;
+
+}
+
+
+
+@keyframes loading{
+
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+.ending{
+
+    margin-top:150px;
+
+}
+/* ===============================
+   FLY TO THE SKY EFFECT
+================================ */
+
+
+.cloud-container{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    z-index:100;
+
+}
+
+
+.cloud{
+
+    position:absolute;
+
+    width:500px;
+
+    height:180px;
+
+    background:
+    linear-gradient(
+            135deg,
+            rgba(220,235,255,.85),
+            rgba(230,215,255,.75));
+
+    border-radius:100px;
+
+    filter:blur(25px);
+
+    opacity:.7;
+
+}
+
+
+/* bentuk awan */
+
+.cloud::before,
+.cloud::after{
+
+    content:"";
+
+    position:absolute;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(220,235,255,.85),
+        rgba(230,215,255,.75)
+    );
+
+    border-radius:50%;
+
+}
+
+
+
+.cloud::before{
+
+    width:220px;
+
+    height:220px;
+
+    left:80px;
+
+    bottom:20px;
+
+}
+
+
+
+.cloud::after{
+
+    width:170px;
+
+    height:170px;
+
+    right:80px;
+
+    bottom:10px;
+
+}
+
+
+
+.cloud-a{
+
+    left:-600px;
+
+    top:15%;
+
+}
+
+
+
+.cloud-b{
+
+    right:-600px;
+
+    top:45%;
+
+}
+
+
+
+.cloud-c{
+
+    left:-600px;
+
+    bottom:5%;
+
+}
+
+
+
+/* awan bergerak */
+
+
+.cloud-container.show{
+
+    opacity:1;
+
+}
+
+
+
+.cloud-container.show .cloud-a{
+
+    animation:
+    cloudRight 3.5s forwards;
+
+}
+
+
+.cloud-container.show .cloud-b{
+
+    animation:
+    cloudLeft 3.5s forwards;
+
+}
+
+
+.cloud-container.show .cloud-c{
+
+    animation:
+    cloudRight 3.5s forwards;
+
+}
+
+
+
+@keyframes cloudRight{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(140vw);
+
+    }
+
+}
+
+
+
+@keyframes cloudLeft{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-140vw);
+
+    }
+
+}
+
+
+
+
+/* ===============================
+   SCREEN BLUR
+================================ */
+
+
+.sky-blur{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(255,255,255,.35);
+
+    backdrop-filter:blur(0px);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:99;
+
+    transition:2s;
+
+}
+
+
+
+.sky-blur.active{
+
+    opacity:1;
+
+    backdrop-filter:blur(18px);
+
+}
+/* ===============================
+   REPLAY BUTTON
+================================ */
+
+
+#replayBtn{
+
+    margin-top:35px;
+
+    padding:12px 28px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #dcecff,
+        #e6d7ff
+    );
+
+
+    color:#3b3655;
+
+    font-size:16px;
+
+    font-family:'Caveat', cursive;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.2);
+
+}
+
+
+
+#replayBtn:hover{
+
+    transform:
+    translateY(-5px);
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.3);
+
+}
+#replayBtn{
+
+    display:none;
+
+    margin-top:35px;
+
+    padding:12px 28px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #dcecff,
+        #e6d7ff
+    );
+
+    color:#3b3655;
+
+    font-size:16px;
+
+    font-family:'Caveat', cursive;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+#replayBtn.show{
+
+    display:inline-block;
+
+    animation:
+    fadeUp 1s ease;
+
+}
+
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0);
+
+    }
+
+}
