@@ -145,12 +145,22 @@ plane.addEventListener("click",()=>{
     .getElementById("skyBlur")
     .classList.remove("active");
 
-},3500);
+     document
+    .getElementById("cloudContainer")
+    .classList.remove("show");
+
+
+},3000);
 
     // tunggu pesawat pergi
 
     setTimeout(()=>{
 
+
+        document
+        .getElementById("skyBlur")
+        .classList.remove("active");
+        
 
         document.getElementById(
         "ending"
